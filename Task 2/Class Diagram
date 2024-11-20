@@ -1,0 +1,17 @@
++---------------------------+
+|       TrafficLight        |
++---------------------------+
+| - state: TrafficState     |
+| - previousMillis: unsigned long |
+| - interval: unsigned long |
+| - buttonPressed: bool     |
++---------------------------+
+| + TrafficLight()          |
+| + setup(): void           |
+| + update(): void          |
+| + setCarGreen(): void     |
+| + setCarYellow(): void    |
+| + setCarRedPedGreen(): void|
+| + setCarRedPedRed(): void |
+| + setCarRedToYellow(): void|
++---------------------------+
