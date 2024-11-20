@@ -1,0 +1,63 @@
+// Pin definitions for LEDs
+const int redPin = 8;
+const int yellowPin = 4;
+const int greenPin = 2;
+
+// Enum to track the current state of the traffic light
+enum TrafficLightState { RED, YELLOW, GREEN };
+TrafficLightState currentState = RED;
+
+// Timing variables
+unsigned long previousMillis = 0;
+const long redDuration = 5000;    // 5 seconds for Red light (adjust this for longer delay)
+const long yellowDuration = 2000; // 2 seconds for Yellow light
+const long greenDuration = 5000;  // 5 seconds for Green light
+
+void setup() {
+  // Initialize the LED pins as outputs
+  pinMode(redPin, OUTPUT);
+  pinMode(yellowPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+
+  // Start with the red light on
+  digitalWrite(redPin, HIGH);
+  digitalWrite(yellowPin, LOW);
+  digitalWrite(greenPin, LOW);
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+
+  // Switch states based on the time intervals for each color
+  switch (currentState) {
+    case RED:
+      if (currentMillis - previousMillis >= redDuration) {
+        // Transition from Red to Yellow
+        previousMillis = currentMillis;
+        digitalWrite(redPin, LOW);
+        digitalWrite(yellowPin, HIGH);
+        currentState = YELLOW;
+      }
+      break;
+
+    case YELLOW:
+      if (currentMillis - previousMillis >= yellowDuration) {
+        // Transition from Yellow to Green
+        previousMillis = currentMillis;
+        digitalWrite(yellowPin, LOW);
+        digitalWrite(greenPin, HIGH);
+        currentState = GREEN;
+      }
+      break;
+
+    case GREEN:
+      if (currentMillis - previousMillis >= greenDuration) {
+        // Transition from Green back to Red
+        previousMillis = currentMillis;
+        digitalWrite(greenPin, LOW);
+        digitalWrite(redPin, HIGH);
+        currentState = RED;
+      }
+      break;
+  }
+}
