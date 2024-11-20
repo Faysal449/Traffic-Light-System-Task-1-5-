@@ -1,0 +1,28 @@
++---------------------------+
+|          Master           |
++---------------------------+
+| - trafficRedPin: int      |
+| - trafficYellowPin: int   |
+| - trafficGreenPin: int    |
+| - pedestrianGreenPin: int |
+| - trafficGreenSignalPin: int |
+| - trafficRedSignalPin: int|
++---------------------------+
+| + setup(): void           |
+| + loop(): void            |
+| + handlePedestrianRequest(): void |
++---------------------------+
+
++---------------------------+
+|          Slave            |
++---------------------------+
+| - pedestrianRedPin: int   |
+| - pedestrianGreenPin: int |
+| - pedestrianButtonPin: int|
+| - pedestrianSignalPin: int|
+| - trafficGreenPin: int    |
+| - trafficRedPin: int      |
++---------------------------+
+| + setup(): void           |
+| + loop(): void            |
++---------------------------+
