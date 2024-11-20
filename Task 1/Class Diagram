@@ -1,0 +1,30 @@
++-------------------------+
+|   TrafficLightSystem     |
++-------------------------+
+| - buttonPin: int         |
+| - redPin: int            |
+| - greenPin: int          |
+| - carGreenLed: int       |
+| - carYellowLed: int      |
+| - carRedLed: int         |
+| - previousMillis: ulong  |
+| - greenDuration: const long |
+| - yellowDuration: const long |
+| - pedestrianGreenDuration: const long |
+| - pedestrianWaiting: bool |
+| - currentState: State    |
++-------------------------+
+| + setup(): void          |
+| + loop(): void           |
++-------------------------+
+
+           ^
+           |
+           +-----------------------+
+           |       State Enum       |
+           +-----------------------+
+           |  CARS_GREEN            |
+           |  CARS_YELLOW           |
+           |  CARS_RED_PEDESTRIAN_GREEN |
+           |  CARS_RED_PEDESTRIAN_RED   |
+           +-----------------------+
