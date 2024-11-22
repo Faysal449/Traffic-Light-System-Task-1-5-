@@ -218,10 +218,3 @@ The use of the TrafficLight class allows for scalable and modular traffic manage
 3. *Operation:*
    - The system will default to vehicular green and pedestrian red.
    - Press the pedestrian button to request a crossing. The system will safely transition to pedestrian green.
-
----
-
-## Future Improvements
-- Add sensors for traffic density to optimize light timings.
-- Implement wireless communication between master and slave for increased flexibility.
-- Integrate with a monitoring system for remote traffic control.
